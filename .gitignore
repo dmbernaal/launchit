@@ -1,0 +1,7 @@
+node_modules/
+dist/
+renders/
+snapshots/
+.env
+.env.local
+.DS_Store

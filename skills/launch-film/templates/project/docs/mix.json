@@ -1,0 +1,19 @@
+{
+  "_comment": "See scripts/mix.py for every field. Rows set the music's loudness relative to her voice, measured per take, so swapping takes keeps the balance. This example fits the 25 s Acme film; replace the rows with your cue sheet. Pieces point at takes in audio/music/<take>/score.mp3 (generated with music.mjs or brought in with music-import.mjs).",
+  "voice_ref": [0.8, 12.0],
+  "rows": [
+    { "from_s": 0.0, "to_s": 0.6, "music_gain_db": -100, "duck_db": 0 },
+    { "from_s": 0.6, "to_s": 6.5, "music_gain_db": -18, "duck_db": 3 },
+    { "from_s": 6.5, "to_s": 14.0, "music_gain_db": -11, "duck_db": 5 },
+    { "from_s": 14.0, "to_s": 19.0, "music_gain_db": -14, "duck_db": 5 },
+    { "from_s": 19.0, "to_s": 40.0, "music_gain_db": -10, "duck_db": 3 }
+  ],
+  "hard": [],
+  "rides": [[[0.6, -60], [2.0, 0]]],
+  "mutes": [],
+  "tapers": [],
+  "qa_ignore": [[0, 2.2]],
+  "variants": {
+    "A": { "pieces": [{ "src": "audio/music/bed-01/score.mp3", "a": 0, "b": 40, "at": 0.6, "fi": 0.08, "fo": 2.0 }] }
+  }
+}

@@ -1,0 +1,4 @@
+/* Fonts load from the project root (HyperFrames serves compositions with the root as base URL). */
+@font-face{font-family:FilmSans;src:url("assets/fonts/Geist-Regular.woff2") format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:FilmSans;src:url("assets/fonts/Geist-Medium.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:FilmSans;src:url("assets/fonts/Geist-SemiBold.woff2") format("woff2");font-weight:600 800;font-display:block}

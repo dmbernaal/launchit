@@ -1,0 +1,54 @@
+{
+ "key": [
+  3,
+  "Close-up recording of a thumb typing on a modern smartphone glass touchscreen keyboard with key click sounds on: soft, crisp, light, high-pitched tactile clicks, about ten separate taps at a natural typing pace, completely dry, no music, no room."
+ ],
+ "send": [
+  0.6,
+  "A short soft airy upward swoosh, the sound of sending a text message on a smartphone. Clean, modern, subtle, premium UI sound."
+ ],
+ "receive": [
+  0.7,
+  "A soft gentle rounded pop with a tiny bright chime, the sound of an incoming text message bubble on a smartphone. Clean, modern, premium UI sound."
+ ],
+ "notify": [
+  1.4,
+  "A gentle modern smartphone notification chime: two soft, bright, glassy bell notes rising, clean and premium, short natural decay."
+ ],
+ "tick": [
+  0.5,
+  "A single soft, dry, close-up clock tick. Short, crisp, intimate, no reverb."
+ ],
+ "buzz": [
+  0.8,
+  "A smartphone vibrating twice on a wooden table, short double buzz, close."
+ ],
+ "ping": [
+  0.5,
+  "A short bright single notification ping from a phone app, clean digital tone."
+ ],
+ "ping2": [
+  0.5,
+  "A short soft high notification blip from a laptop app, two quick tones."
+ ],
+ "shimmer": [
+  3,
+  "A soft magical airy shimmer that swells and fades, ethereal glassy sparkles, gentle, like light appearing in darkness. No melody."
+ ],
+ "tap": [
+  0.5,
+  "A soft single fingertip tap on a smartphone glass screen, very short, close, dry."
+ ],
+ "roll": [
+  1.2,
+  "A fast soft mechanical counter rolling up, delicate rapid ticks that slow down and settle, subtle premium UI sound."
+ ],
+ "bloom": [
+  0.9,
+  "A soft airy glassy swoosh as a panel expands, gentle and smooth, premium UI transition sound."
+ ],
+ "impact": [
+  4,
+  "One deep, wide, cinematic low hit with a long smooth tail, single hit, no rhythm, no melody."
+ ]
+}

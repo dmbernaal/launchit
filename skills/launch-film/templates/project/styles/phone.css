@@ -1,0 +1,77 @@
+/* Standalone iPhone + Messages for films (source/phone.js). Blue/grey are Messages' own colours;
+   the product's colour lives only in the light around the glass. */
+#phone-stage{position:absolute;left:600px;top:36px;width:720px;height:1020px;z-index:4;opacity:0;visibility:hidden;transform-origin:50% 50%;pointer-events:none;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",var(--font);color:#fcfcfc}
+#phone-stage *{box-sizing:border-box}
+#phone-stage img,#phone-stage svg{display:block;max-width:100%}
+#phone-stage .device{position:absolute;left:50%;top:0;width:452px;height:990px;margin-left:-226px;padding:11px;border-radius:66px;
+ background:linear-gradient(105deg,#64636b,#27272b 12%,#45454b 49%,#19191c 65%,#74737e);box-shadow:inset 0 0 0 1px #9f9da575,inset 0 0 0 3px #111113e6,inset 0 0 0 4px #d2d0de26,0 40px 90px -20px #000}
+#phone-stage .hw{position:absolute;width:3px;border-radius:3px;background:linear-gradient(#716775,#302834 50%,#65596d)}
+#phone-stage .hw.silent{left:-2px;top:118px;height:26px}#phone-stage .hw.volume{left:-2px;top:170px;height:90px}#phone-stage .hw.power{right:-2px;top:198px;height:88px}
+#phone-stage .screen{position:relative;height:100%;border-radius:55px;overflow:hidden;background:#000;box-shadow:0 0 0 1.5px #080808}
+#phone-stage .status{position:relative;z-index:5;height:51px;padding:18px 28px 0;display:flex;justify-content:space-between;align-items:start;font-size:16px;font-weight:600;letter-spacing:-.03em}
+#phone-stage .island{position:absolute;top:11px;left:50%;width:122px;height:34px;margin-left:-61px;border-radius:20px;background:#030303}
+#phone-stage .sys{display:flex;align-items:center;gap:6px;margin-top:2px}
+#phone-stage .battery{position:relative;display:block;width:25px;height:12px;border-radius:4px;border:1px solid #fcfcfc66}
+#phone-stage .battery::before{content:"";position:absolute;inset:1.5px;border-radius:2px;background:#fcfcfc}
+#phone-stage .scene{position:absolute;top:51px;inset-inline:0;bottom:0}
+#phone-stage .contact{height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#0091ff}
+#phone-stage .contact>div{display:flex;flex-direction:column;align-items:center;gap:6px;color:#fcfcfc}
+#phone-stage .contact strong{font-size:14px;font-weight:500;letter-spacing:-.01em}
+#phone-stage .spacer{width:22px}
+#phone-stage .avatar{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#202023;overflow:hidden}
+#phone-stage .avatar img{width:78%;height:78%;object-fit:contain}
+#phone-stage .conversation{height:720px;overflow:hidden;mask-image:linear-gradient(transparent,#000 12px)}
+#phone-stage .thread{display:flex;flex-direction:column;align-items:start;gap:17px;padding:15px 20px 22px;min-height:100%}
+#phone-stage .msg-day{align-self:center;margin:0 0 4px;padding-top:5px;font-size:11px;font-weight:500;color:#9b969b}
+#phone-stage .msg{--fill:#2c2c2e;display:flex;flex-direction:column;align-items:start;gap:7px;max-width:88%;font-size:18px;line-height:1.38;letter-spacing:-.018em;transform-origin:0 100%}
+#phone-stage .msg.me{--fill:#0091ff;align-self:end;align-items:end;transform-origin:100% 100%}
+#phone-stage .bubble{position:relative;padding:12px 15px;border-radius:21px;background:var(--fill)}
+#phone-stage .bubble>span{position:relative;z-index:1}
+#phone-stage .bubble .tail{position:absolute;bottom:-1px;left:-7px;width:24px;height:24px;color:var(--fill);overflow:visible}
+#phone-stage .msg.me .tail{left:auto;right:-7px;transform:scaleX(-1)}
+#phone-stage .preview{width:345px;border-radius:20px;overflow:hidden;background:#202023}
+#phone-stage .preview img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:left top}
+#phone-stage .preview>div{display:grid;gap:4px;padding:12px 15px 15px}
+#phone-stage .preview .host{font-size:12px;line-height:17px;color:#99999f}
+#phone-stage .preview strong{font-size:16px;line-height:21px;font-weight:600}
+#phone-stage .preview div>span:last-child{font-size:13px;line-height:19px;color:#99999f}
+#phone-stage .screen-msg .preview{width:300px}
+#phone-stage .dots .bubble{display:flex;gap:5px;padding:16px 16px}
+#phone-stage .dots i{width:9px;height:9px;border-radius:50%;background:#8e8e93}
+#phone-stage .composer{position:absolute;left:0;right:0;bottom:42px;z-index:4;display:flex;gap:10px;align-items:center;padding:12px 16px;background:#000;color:#929296}
+#phone-stage .plus{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:#2c2c2e;color:#bcbcc0}
+#phone-stage .input{position:relative;flex:1;min-height:42px;padding:8px 42px 8px 15px;border-radius:24px;box-shadow:inset 0 0 0 1px #3a3a3c;font-size:17px;display:block}
+#phone-stage .draft{white-space:pre-wrap}
+#phone-stage .caret{display:inline-block;vertical-align:middle;width:2px;height:19px;margin-left:1px;background:#0091ff}
+#phone-stage .send{position:absolute;right:5px;top:5px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#0091ff;color:#fff;opacity:0}
+#phone-stage .home{position:absolute;bottom:10px;left:50%;width:140px;height:5px;margin-left:-70px;border-radius:5px;background:#f5f0f09c;z-index:6}
+/* Lock screen */
+#phone-stage .lock{position:absolute;inset:0;z-index:3;border-radius:inherit;overflow:hidden;color:#f2f3f6}
+#phone-stage .wall{position:absolute;inset:0;background:linear-gradient(153deg,#1b222b,#11161d 42%,#070a10 75%)}
+#phone-stage .lock-date{position:absolute;top:96px;left:0;right:0;text-align:center;font-size:21px;font-weight:500;letter-spacing:-.02em}
+#phone-stage .lock-time{position:absolute;top:118px;left:0;right:0;text-align:center;font-size:108px;font-weight:600;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+#phone-stage .note{position:absolute;left:22px;right:22px;top:304px;display:flex;align-items:center;gap:14px;padding:17px 19px;border-radius:28px;background:#50576073;box-shadow:inset 0 .5px #ffffff1a;backdrop-filter:blur(18px)}
+#phone-stage .note-icon .avatar{width:43px;height:43px;border-radius:12px}
+#phone-stage .note>div:last-child{flex:1}
+#phone-stage .note-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:16px;line-height:1.2}
+#phone-stage .note-title span{font-size:12px;color:#c1c3c7}
+#phone-stage .note p{margin:0;font-size:16px;line-height:1.35;letter-spacing:-.018em}
+/* Keyboard */
+#phone-stage .kb{position:absolute;left:0;right:0;bottom:0;height:305px;padding:0 4px 28px;z-index:5;background:#1d1d20;opacity:0;transform:translateY(305px)}
+#phone-stage .kb-predict{display:flex;align-items:center;height:38px;font-size:16px;color:#f3f3f4}
+#phone-stage .kb-predict span{width:33.3%;text-align:center;line-height:23px;border-right:.5px solid #ffffff18}#phone-stage .kb-predict span:last-child{border:0}
+#phone-stage .kb-row{display:flex;justify-content:center;gap:5px;margin-bottom:11px}
+#phone-stage .key{display:flex;align-items:center;justify-content:center;width:37px;height:43px;border-radius:5px;background:#626265;box-shadow:0 1px 0 #050505;color:#f6f6f8;font-size:22px}
+#phone-stage .key.mod{flex:1;background:#3d3d40}
+#phone-stage .key[data-down="true"]{background:#99999f;transform:translateY(1px)}
+#phone-stage .kb-row.space .key{font-size:15px}#phone-stage .kb-row.space .key:nth-child(2){width:210px;flex:none}
+#phone-stage .kb-bottom{display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:26px;color:#a7a7af}
+#phone-stage .kb-pop{position:absolute;display:grid;place-items:center;width:47px;height:62px;border-radius:9px 9px 6px 6px;background:#7c7c80;color:#fff;font-size:29px;box-shadow:0 1px 4px #0004;opacity:0}
+#phone-stage .touch{position:absolute;z-index:7;width:40px;height:40px;margin:-20px;border-radius:50%;background:#ffffff10;box-shadow:inset 0 0 0 1px #ffffff50;opacity:0}
+/* The light: thin bright edge (7 px, blur 5) plus a soft inward bloom (16 px, blur 14). Never thick, never outside the glass. */
+#phone-stage .glow{position:absolute;inset:0;z-index:9;border-radius:inherit;overflow:hidden;opacity:0;visibility:hidden}
+#phone-stage .glow::before,#phone-stage .glow::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--spectrum);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+#phone-stage .glow::before{padding:7px;filter:blur(5px);opacity:.95}
+#phone-stage .glow::after{padding:16px;filter:blur(14px);opacity:calc(.28 + var(--flare,0) * .35)}

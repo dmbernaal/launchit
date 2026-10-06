@@ -1,0 +1,12 @@
+{
+  "name": "launchit",
+  "owner": { "name": "dmbernaal" },
+  "plugins": [
+    {
+      "name": "launchit",
+      "source": "./",
+      "description": "Cinematic launch and investor films for any product (the launch-film skill).",
+      "version": "1.0.0"
+    }
+  ]
+}

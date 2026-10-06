@@ -1,0 +1,85 @@
+/* Styles for source/extras (from the Kaiyros investor film). Layers: #field/#sky (z1) < #pings (z2) < network/market (z5) < mascot (z7) < #cards (z8) < #headlines (z9). */
+#field,#sky{left:0;top:0;width:1920px;height:1080px;z-index:1;opacity:0;visibility:hidden}
+#sky{z-index:1}
+#pings{inset:0;z-index:2}
+#mascot-stage{left:660px;top:30px;width:600px;height:750px;z-index:7;transform-origin:50% 50%;opacity:0;visibility:hidden}
+#mascot-stage canvas{width:600px;height:750px;display:block}
+#orb-stage{left:660px;top:240px;width:600px;height:600px;z-index:7;transform-origin:50% 50%;opacity:0;visibility:hidden}
+/* Headlines */
+.hl-hook{top:452px;font-size:112px;text-shadow:0 0 50px #000}
+.hl-top2{top:96px;font-size:66px;line-height:1.16}.hl-top2 .hl-line+.hl-line{margin-top:6px}
+.hl-low{top:800px;font-size:64px;text-shadow:0 0 40px #000}
+.hl-other{top:150px;font-size:66px;color:#8a8a90}
+/* Lower third: carries the hook with the sound off */
+.beside{position:absolute;left:1010px;top:410px;opacity:0;visibility:hidden}
+.beside .eyebrow{color:#c9b3ff}.beside p{margin:16px 0 0;font-size:64px;line-height:1.1;letter-spacing:-.045em}
+/* Market numbers */
+.stat{position:absolute;width:820px;opacity:0;visibility:hidden;transform-origin:50% 50%}
+.stat-right{left:990px;top:300px}.stat-left{left:120px;top:300px}.stat-center{left:550px;top:250px;width:820px;text-align:center}
+.stat .eyebrow{font-size:19px;color:var(--ink2)}
+.stat-row{display:flex;align-items:center;gap:28px;margin-top:18px}.stat-center .stat-row{justify-content:center}
+.stat-num{font-size:220px;line-height:.9;font-weight:500;letter-spacing:-.065em;font-variant-numeric:tabular-nums;padding-right:.04em;white-space:nowrap}
+.stat-pill{font-size:26px;padding:12px 20px;background:var(--green-bg);color:var(--green);box-shadow:none;opacity:0;visibility:hidden}
+.stat-note{margin:22px 0 0;font-size:30px;letter-spacing:-.02em;color:var(--ink2);opacity:0;visibility:hidden}
+.source{margin:34px 0 0;font-size:16px;line-height:1.45;color:#77777e;letter-spacing:0;opacity:0;visibility:hidden}
+/* Field labels and the platforms racing in */
+.flabel{position:absolute;top:930px;opacity:0;visibility:hidden}.flabel b{display:block;font-size:30px;font-weight:500;letter-spacing:-.02em}
+.flabel span{display:block;margin-top:6px;font-size:16px;color:#77777e}
+.flabel.left{left:120px}.flabel.right{right:120px;text-align:right}
+.racer{position:absolute;font-size:30px;font-weight:500;letter-spacing:-.02em;color:#9a9aa1;opacity:0;visibility:hidden}
+/* Network: its own layer BEHIND the mascot (#mascot-stage is z 7), so every beam grows out of her */
+.net-layer{position:absolute;inset:0;z-index:5;opacity:0;visibility:hidden}
+.net-layer .links{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+.beam,.beam-glow{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.beam{stroke-width:2.2}.beam-glow{stroke-width:9;opacity:.55}
+.pulse{fill:#fff}.pulse-halo{fill:#b48aff}.pulse.live{fill:#e9fff0}.pulse-halo.live{fill:#3ccf68}
+.net-layer .tool{gap:14px}.net-layer .tool.live{box-shadow:inset 0 0 0 1px rgba(60,207,104,.45),0 20px 50px #0009}
+.live-pill{font-style:normal;font-size:17px;font-weight:500;padding:5px 12px;border-radius:999px;background:var(--green-bg);color:var(--green)}
+.net-layer .tool[data-on="true"]{box-shadow:inset 0 0 0 1px rgba(180,138,255,.55),0 0 40px rgba(150,110,255,.25),0 20px 50px #0009}
+.net-layer .tool.live[data-on="true"]{box-shadow:inset 0 0 0 1px rgba(60,207,104,.55),0 0 40px rgba(60,207,104,.2),0 20px 50px #0009}
+/* Marketplace: behind the mascot too; every match flows through her */
+.market{position:absolute;inset:0;z-index:5;opacity:0;visibility:hidden}
+.market .links{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+.ml{fill:none;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1}
+.ml-hot,.ml-hot-glow{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;visibility:hidden}
+.ml-hot{stroke-width:3.5}.ml-hot-glow{stroke-width:12}
+.m-pulse{fill:#fff}.m-pulse-halo{fill:#b48aff}.m-star{fill:#fff}.m-star-halo{fill:#ff9ad0}
+.m-creator,.m-brand{position:absolute;display:flex;align-items:center;gap:16px;opacity:0;visibility:hidden}
+.m-creator{left:150px;width:320px;justify-content:flex-end;flex-direction:row-reverse}.m-brand{left:1450px;width:320px}
+.m-creator i,.m-brand i{flex:none;width:58px;height:58px;display:grid;place-items:center;font-style:normal;font-size:19px;font-weight:600}
+.m-creator i{border-radius:50%;background:linear-gradient(135deg,#3a3350,#22202b);box-shadow:inset 0 0 0 1px var(--line)}
+.m-brand i{border-radius:16px;background:#f2efe9;color:#141414}
+.m-creator span,.m-brand span{font-size:24px;color:var(--ink2);letter-spacing:-.01em}
+.m-creator[data-hot="true"] i,.m-brand[data-hot="true"] i{box-shadow:0 0 0 2px #b48aff,0 0 30px rgba(180,138,255,.6)}
+.m-creator[data-hot="true"] span,.m-brand[data-hot="true"] span{color:var(--ink)}
+.deal{position:absolute;left:960px;top:850px;display:flex;align-items:center;gap:16px;padding:16px 24px 16px 18px;border-radius:22px;background:#1b1b1e;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 30px 60px #000a;opacity:0;visibility:hidden;white-space:nowrap}
+.deal i{flex:0 0 38px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:20px;background:var(--green);color:#04110a}
+.deal b{display:block;font-size:24px;font-weight:500}.deal span{display:block;margin-top:2px;font-size:18px;color:var(--muted)}
+/* Counter card: labels on the left, every value right-aligned on one edge (the number is what matters) */
+.c-counter .row{display:flex;justify-content:space-between;align-items:baseline;gap:26px}
+.c-counter .val{display:flex;align-items:baseline;justify-content:flex-end;gap:22px;text-align:right}
+/* Post at the right moment: a week of posting times as a heat map. No outlines; spacing separates the days.
+   The best moment (Fri 7:30 PM) carries the spectrum; the post lands in a full-width row beneath, so text never spills. */
+.c-week{top:226px;width:1000px;padding:44px 52px 46px}
+.c-week header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.pw-best{opacity:0;visibility:hidden}
+.pw-grid{position:relative;display:grid;grid-template-columns:88px repeat(7,1fr);column-gap:10px;row-gap:10px;align-items:center}
+.pw-grid>*{position:relative;z-index:1}
+.pw-day{display:grid;gap:3px;padding:2px 0 10px 4px}
+.pw-day span{font-size:17px;color:var(--muted);letter-spacing:-.01em}
+.pw-day b{font-size:34px;font-weight:500;letter-spacing:-.04em;color:var(--ink2);font-variant-numeric:tabular-nums}
+.pw-day.best span{color:rgba(201,179,255,calc(.55 + var(--lit,0) * .45))}.pw-day.best b{color:var(--ink)}
+.pw-time{justify-self:end;padding-right:12px;font-size:15px;color:#6f6f76;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pw-time.best{color:rgba(232,221,255,calc(.45 + var(--lit,0) * .55))}
+.pw-cell{display:block;height:34px;border-radius:9px;background:rgba(255,255,255,var(--a));opacity:0}
+.pw-cell.best{background:rgba(255,255,255,var(--a));box-shadow:0 0 calc(var(--lit,0) * 34px) rgba(180,138,255,calc(var(--lit,0) * .55))}
+.pw-cell.best::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:var(--lit,0);background:linear-gradient(100deg,#ffb26b,#ff70ac 32%,#b48aff 62%,#6aa6ff)}
+.pw-grid>.pw-col{position:absolute;grid-column:6/7;grid-row:1/8;inset:-8px -5px;border-radius:16px;background:rgba(180,138,255,.075);z-index:0;opacity:0}
+.pw-post{display:flex;align-items:center;gap:18px;margin:28px 0 0 98px;padding:13px 16px 13px 13px;border-radius:20px;background:#222225;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 24px 50px rgba(0,0,0,.45);opacity:0;visibility:hidden}
+.pw-post img{flex:0 0 52px;width:52px;height:70px;border-radius:10px;object-fit:cover;background:#fff}
+.pw-post div{display:grid;gap:4px;min-width:0}
+.pw-post b{font-size:22px;font-weight:500;letter-spacing:-.02em;white-space:nowrap}
+.pw-post .pc-state{font-size:17px;color:var(--muted);white-space:nowrap}
+.pw-check{margin-left:auto;flex:0 0 34px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:18px;color:transparent;background:rgba(255,255,255,.07)}
+.pw-post[data-landed="true"]{box-shadow:inset 0 0 0 1px rgba(180,138,255,.4),0 0 40px rgba(150,110,255,.2),0 24px 50px rgba(0,0,0,.45)}
+.pw-post[data-landed="true"] .pw-check{background:var(--green);color:#04110a}

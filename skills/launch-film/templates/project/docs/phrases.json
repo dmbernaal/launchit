@@ -1,0 +1,18 @@
+{
+  "_comment": "Each phrase: [id, source, first words exactly as written in the script, film time or null (keep the take's breath), minimum silence before it]. Cues are extra word moments for picture and sound: \"words\" or [\"words\", \"earlierCue\"] (searched after that cue). Every cue also gets <name>End.",
+  "sources": { "main": "audio/voice/take-01" },
+  "phrases": [
+    ["open", "main", "You have a", 0.8, 0],
+    ["listens", "main", "Acme listens", null, 1.0],
+    ["moment", "main", "The moment you", null, 0.6],
+    ["name", "main", "Acme. Your", null, 1.4]
+  ],
+  "tail": 3.5,
+  "cues": {
+    "hundred": ["a hundred ideas", "open"],
+    "almost": ["almost none", "open"],
+    "remembers": ["remembers for you", "listens"],
+    "there": ["already there", "moment"],
+    "memory": ["second memory", "name"]
+  }
+}

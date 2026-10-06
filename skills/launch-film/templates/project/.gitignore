@@ -1,0 +1,11 @@
+node_modules/
+dist/
+renders/
+audio/voice/
+audio/music/
+audio/stems/
+audio/mix-*.wav
+snapshots/
+.env.local
+.env
+.DS_Store

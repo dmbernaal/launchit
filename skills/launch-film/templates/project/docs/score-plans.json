@@ -1,0 +1,94 @@
+{
+ "_comment": "Example plan for the 25 s Acme film in palette 3, 'Minimal piano and space' (references/05a-score-styles.md). Choose the palette per film with the user. Chunk text <= 200 chars; 3000-120000 ms per chunk; durations sum to (end_s - start_s) * 1000; same boundaries across plans so takes can be cut together; never name artists; always exclude vocals.",
+ "start_s": 0.6,
+ "end_s": 25.6,
+ "plans": {
+  "A": {
+   "concept": "Minimal piano and space: calm, premium, lets the product breathe.",
+   "chunks": [
+    {
+     "text": "[Many ideas] {Instrumental. Out of near silence, a close felt piano plays a few soft single notes with lots of space between them.}",
+     "duration_ms": 6000,
+     "positive_styles": [
+      "solo felt piano",
+      "close and intimate",
+      "72 BPM",
+      "A major",
+      "soft room reverb",
+      "space for a quiet narrator"
+     ],
+     "negative_styles": [
+      "vocals",
+      "lyrics",
+      "choir",
+      "spoken words",
+      "humming",
+      "singing",
+      "drums",
+      "strings swell",
+      "cinematic build",
+      "orchestra"
+     ],
+     "context_adherence": "medium",
+     "conditioning_ref": null,
+     "condition_strength": null
+    },
+    {
+     "text": "[Acme remembers] {Instrumental. The piano finds a simple four note figure and repeats it, a little warmer, a soft low note underneath.}",
+     "duration_ms": 8000,
+     "positive_styles": [
+      "solo felt piano",
+      "simple four note figure",
+      "warm",
+      "72 BPM",
+      "A major",
+      "space for a quiet narrator"
+     ],
+     "negative_styles": [
+      "vocals",
+      "lyrics",
+      "choir",
+      "spoken words",
+      "humming",
+      "singing",
+      "drums",
+      "strings swell",
+      "cinematic build",
+      "orchestra"
+     ],
+     "context_adherence": "high",
+     "conditioning_ref": null,
+     "condition_strength": null
+    },
+    {
+     "text": "[Already there] {Instrumental. The figure opens into gentle chords, the fullest moment, then settles on one warm held chord that rings out.}",
+     "duration_ms": 11000,
+     "positive_styles": [
+      "felt piano chords",
+      "gentle",
+      "resolving",
+      "one warm held chord",
+      "72 BPM",
+      "A major"
+     ],
+     "negative_styles": [
+      "vocals",
+      "lyrics",
+      "choir",
+      "spoken words",
+      "humming",
+      "singing",
+      "drums",
+      "strings swell",
+      "cinematic build",
+      "orchestra"
+     ],
+     "context_adherence": "high",
+     "conditioning_ref": null,
+     "condition_strength": null
+    }
+   ]
+  }
+ },
+ "mix": []
+}

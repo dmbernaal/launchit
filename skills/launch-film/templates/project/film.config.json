@@ -1,0 +1,24 @@
+{
+  "id": "acme-launch",
+  "title": "Acme: launch film",
+  "providers": { "voice": "elevenlabs", "music": "elevenlabs", "sfx": "elevenlabs" },
+  "voice": {
+    "script": "docs/narration.txt",
+    "elevenlabs": {
+      "voice_id": "YOUR_ELEVENLABS_VOICE_ID",
+      "model_id": "eleven_v4",
+      "seed": 7206001,
+      "settings": { "stability": 0.5, "similarity_boost": 0.89, "style": 0.25, "use_speaker_boost": true, "speed": 0.72 },
+      "format": "mp3_44100_128"
+    },
+    "openai": {
+      "model": "gpt-4o-mini-tts",
+      "voice": "coral",
+      "instructions": "Warm, calm and quietly confident. Unhurried, with natural pauses at each ellipsis. Never salesy, never excited."
+    },
+    "local": { "command": "say -v Samantha -r 160 -o {out}.aiff -f {script}" }
+  },
+  "music": { "model_id": "music_v2_5", "plans": "docs/score-plans.json", "format": "mp3_44100_128" },
+  "sfx": "docs/sfx.json",
+  "build": { "alias": {}, "swap": [] }
+}

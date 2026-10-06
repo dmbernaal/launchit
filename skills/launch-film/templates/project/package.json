@@ -1,0 +1,21 @@
+{
+  "name": "launch-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "draft": "node scripts/draft-timeline.mjs && node scripts/events.mjs && node scripts/build.mjs",
+    "timeline": "node scripts/timeline.mjs && node scripts/events.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "hyperframes check .",
+    "snapshot": "hyperframes snapshot . --describe false",
+    "render": "node scripts/build.mjs && hyperframes render . -o renders/$npm_package_config_id-4k.mp4 --fps 60 --resolution landscape-4k --quality high --crf 14 --workers 3 --strict"
+  },
+  "config": { "id": "acme-launch" },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "gsap": "3.15.0",
+    "hyperframes": "0.8.134",
+    "three": "0.185.1"
+  }
+}

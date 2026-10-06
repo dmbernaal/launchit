@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=1920,height=1080">
+<title>FILM TITLE</title>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="styles/film.css"><link rel="stylesheet" href="styles/phone.css">
+<script>window.__timelines={};</script><script defer src="dist/movie.js"></script>
+</head>
+<body>
+<!-- One composition. data-duration is kept equal to source/timeline.json by scripts/events.mjs. -->
+<main id="film" data-composition-id="FILM-ID" data-width="1920" data-height="1080" data-start="0" data-duration="60" data-fps="60">
+ <div id="cam">
+  <div id="backdrop"></div>      <!-- the real product, out of focus, behind a card -->
+  <!-- Optional layers for source/extras (add <link rel="stylesheet" href="source/extras/extras.css"> in <head>):
+  <canvas id="field"></canvas> <canvas id="sky"></canvas> <div id="pings"></div>
+  <div id="mascot-stage"></div> or <canvas id="orb-stage" width="1200" height="1200"></canvas> -->
+  <div id="type"></div>          <!-- opening typography -->
+  <div id="phone-stage"></div>   <!-- source/phone.js -->
+  <div id="cards"></div>         <!-- one idea per card -->
+  <div id="headlines"></div>     <!-- source/headlines.js -->
+  <div id="signoff"></div>       <!-- source/signoff.js -->
+ </div>
+ <!-- Placeholder soundtrack for previews; final mixes are muxed onto the render (scripts/export.mjs). -->
+ <audio id="soundtrack" class="clip" src="audio/mix-A.wav" data-start="0" data-duration="60" data-track-index="5" data-volume="1" preload="auto"></audio>
+</main>
+</body></html>

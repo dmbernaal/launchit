@@ -1,0 +1,62 @@
+/* The film's language: a black stage, white type, one focal point. The spectrum appears only where the product
+   is present (the light around the phone, a sheen through the word that carries the idea, a ring on a detail). */
+:root{
+ /* The product's light. Five colours, warm to cool. Change these to the brand's own palette (all effects follow). */
+ --spec-1:#ffb26b;--spec-2:#ff70ac;--spec-3:#b48aff;--spec-4:#6aa6ff;--spec-5:#5fe3d3;--spec-glow:rgba(170,130,255,.25);
+ --ink:#f7f7f8;--ink2:#d6d6db;--muted:#8e8e95;--faint:#5c5c63;--line:rgba(255,255,255,.085);--green:#3ccf68;--green-bg:rgba(60,207,104,.13);
+ --font:FilmSans,"Geist","Inter",Arial,sans-serif;color-scheme:dark}
+html,body{width:1920px;height:1080px;margin:0;overflow:hidden;background:#000;font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+*{box-sizing:border-box}
+#film{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;isolation:isolate}
+#cam{position:absolute;inset:0;transform-origin:50% 48%}
+#cam>*{position:absolute}
+audio{position:absolute;width:1px;height:1px;opacity:0}
+/* The sheen: one band of light passing through white letters (drive --sheen from 100% to 0% with util.sheen). */
+.sheen{background-image:linear-gradient(100deg,var(--ink) 0%,var(--ink) 36%,var(--spec-1) 41%,var(--spec-2) 45.5%,var(--spec-3) 50%,var(--spec-4) 54.5%,var(--spec-5) 59%,var(--ink) 64%,var(--ink) 100%);
+ background-size:330% 100%;background-position:var(--sheen,100%) 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+/* The full spectrum, flowing (for the one line that is the film's claim). */
+.spectrum{background-image:linear-gradient(90deg,var(--spec-1),var(--spec-2),var(--spec-3),var(--spec-4),var(--spec-5),var(--spec-3),var(--spec-2),var(--spec-1));background-size:300% 100%;background-position:var(--flow,0%) 0;
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 28px var(--spec-glow))}
+/* Typography */
+#type,#headlines{inset:0;pointer-events:none}
+#type{z-index:6}#headlines{z-index:9}
+.hl{position:absolute;left:0;right:0;text-align:center;opacity:0;visibility:hidden;font-weight:400;letter-spacing:-.05em;line-height:1.08}
+.hl-line{margin:0;white-space:nowrap}.hl .w{display:inline-block}.hl .muted{color:#7d7d84}
+.hl-big{top:410px;font-size:168px;letter-spacing:-.06em}
+.hl-mid{top:460px;font-size:104px;text-shadow:0 0 40px #000}
+.hl-top{top:112px;font-size:76px}
+.hl-grey{top:150px;font-size:66px;color:#8a8a90}
+/* Backdrop: the real product, out of focus, behind a card */
+#backdrop{inset:0;z-index:1;overflow:hidden}
+#backdrop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;visibility:hidden;filter:blur(16px) brightness(.34) saturate(.9)}
+/* Cards: the product's dark material, one idea each */
+#cards{inset:0;z-index:8;perspective:2400px;pointer-events:none}
+.card{position:absolute;border-radius:34px;opacity:0;visibility:hidden;transform-origin:50% 50%;color:var(--ink);overflow:hidden;
+ background:linear-gradient(180deg,#19191b,#121213 70%);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 rgba(255,255,255,.06),0 50px 140px rgba(0,0,0,.7)}
+.eyebrow{display:block;font-size:17px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.label{display:block;font-size:22px;color:var(--muted);letter-spacing:-.01em}
+.value{font-size:188px;line-height:.9;letter-spacing:-.065em;font-weight:500;font-variant-numeric:tabular-nums;display:inline-block;padding-right:.04em}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;font-size:18px;font-weight:500;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px var(--line)}
+.pill.spec{background:rgba(180,138,255,.12);box-shadow:inset 0 0 0 1px rgba(180,138,255,.4);color:#e8ddff}
+.c-example{left:560px;top:270px;width:800px;height:520px;padding:46px 50px}
+/* Bars: rainbow fill, no outline (an outline read as cheap) */
+.bars{display:flex;align-items:flex-end;gap:10px}
+.bars i{flex:1;height:calc(var(--h)*100%);border-radius:7px 7px 3px 3px;transform-origin:50% 100%;transform:scaleY(0);background:linear-gradient(180deg,var(--spec-1),var(--spec-2) 30%,var(--spec-3) 62%,var(--spec-4))}
+/* Struck-out old values: never let a grid squeeze them (max-content column, no letter-spacing) */
+s.was{position:relative;display:inline-block;white-space:nowrap;letter-spacing:0;text-decoration:none;color:var(--faint);padding-right:6px}
+s.was::after{content:"";position:absolute;left:-4px;right:-4px;top:55%;height:3px;background:var(--faint);transform:scaleX(var(--s,0));transform-origin:0 50%}
+/* A ring of light on a detail (a hook, a number) */
+.ring{position:absolute;border-radius:22px;opacity:0;visibility:hidden}
+.ring::before,.ring::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:4px;background:conic-gradient(from 210deg,var(--spec-1),var(--spec-2),var(--spec-3),var(--spec-4),var(--spec-5),var(--spec-1));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.ring::after{filter:blur(12px);padding:9px;opacity:.8}
+/* Gallery of real screens (source/gallery.js) */
+.gallery{position:absolute;inset:0;z-index:2;perspective:2000px;transform-style:preserve-3d;opacity:0;visibility:hidden}
+.gallery.front{z-index:6}
+.gallery img{position:absolute;left:50%;top:50%;width:1920px;height:1080px;border-radius:28px;box-shadow:0 0 0 2px rgba(255,255,255,.12),0 40px 120px #000}
+/* Sign-off */
+#signoff{left:0;right:0;top:640px;z-index:6;text-align:center;opacity:0;visibility:hidden}
+.mark{margin:0;font-size:128px;font-weight:500;letter-spacing:-.06em;line-height:1;display:inline-flex}
+.mark .grow{display:inline-block;overflow:hidden;max-width:0;opacity:0;padding-bottom:.22em;margin-bottom:-.22em}
+.tag{margin:26px 0 0;font-size:32px;letter-spacing:-.02em;color:var(--ink2);opacity:0;visibility:hidden}
+.url{margin:16px 0 0;font-size:22px;color:var(--muted);opacity:0;visibility:hidden}

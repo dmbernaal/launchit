@@ -1,0 +1,11 @@
+{
+  "name": "launchit",
+  "displayName": "launchit",
+  "description": "Make cinematic launch and investor films for any product: concept, script, narration, a HyperFrames 4K60 picture with real UI, an original or licensed score, sound design, mix, and score variants on one locked picture. ElevenLabs optional.",
+  "version": "1.0.0",
+  "author": { "name": "dmbernaal" },
+  "homepage": "https://github.com/dmbernaal/launchit",
+  "repository": "https://github.com/dmbernaal/launchit",
+  "license": "MIT",
+  "keywords": ["video", "launch", "film", "hyperframes", "elevenlabs", "narration", "music", "investor", "trailer"]
+}
