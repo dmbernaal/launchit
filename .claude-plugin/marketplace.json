@@ -1,6 +1,9 @@
 {
   "name": "launchit",
-  "owner": { "name": "dmbernaal" },
+  "description": "launchit: an agent skill for cinematic launch and investor films for any product.",
+  "owner": {
+    "name": "dmbernaal"
+  },
   "plugins": [
     {
       "name": "launchit",
